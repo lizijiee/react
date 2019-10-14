@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+            此文件作为整个项目的入口文件
+            *** 此处为从远程导入各个项目的js文件 ***
+            (react、vue项目打包和运行都会产生一个js文件，此文件就是动态渲染页面用的)
+            config.js是potal项目产生的，用来进行路由分发与组件状态管理等
+     -->
+    <!--  定义路径和引入名称  -->
+    <script type="systemjs-importmap">
+        {
+            "imports": {
+                "@portal/config": "http://localhost:8233/config.js",
+                "@portal/menu": "http://localhost:8235/menu.js",
+                "@portal/project1": "http://localhost:8236/project1.js",
+                "@portal/project2": "http://localhost:8237/project2.js"
+              }
+        }
+    </script>
+    <!-- 
+                 ***********   声明文件   ***************
+        这里是引入我们的systemjs，在公共依赖文件夹中，通过http-server开启的本地服务，进行远程访问
+    -->
+    <script src='http://localhost:8000/systemjs/system.js'></script>
+    <script src='http://localhost:8000/systemjs/amd.js'></script>
+    <script src='http://localhost:8000/systemjs/named-exports.js'></script>
+    <script src='http://localhost:8000/systemjs/use-default.js'></script>
+
+    <!--  执行 common-deps.js  -->
+    <!-- Load the common deps-->
+    <script src="http://localhost:8234/common-deps.js"></script>
+
+    <!-- Load the application -->
+    <script>
+        // 执行config.js，进行页面的动态渲染
+        // ***********   引用文件   ***************
+        System.import('@portal/config')
+    </script>
+
+    <!-- Static navbar -->
+    <!-- 引入样式文件 -->
+    <link rel="stylesheet" href="http://localhost:8233/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!-- 菜单容器 -->
+    <div id='menu'></div>
+    <div id='content'>
+        <!-- react应用容器 -->
+        <div id="react"></div>
+        <!-- vue应用容器 -->
+        <div id="vue"></div>
+    </div>
+
+</body>
+
+</html>
