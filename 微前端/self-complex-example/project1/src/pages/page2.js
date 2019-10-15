@@ -3,7 +3,7 @@ import React from 'react'
 export default class HomePage extends React.Component {
     render () {
         return (
-            <h1>Page2 !</h1>
+            <h1>我是React  Page2 !</h1>
         )
     }
 }
