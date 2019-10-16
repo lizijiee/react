@@ -19,11 +19,13 @@
 
 如何从何而来，为什么采用，采用的优点缺点是什么，具体实施过程，实施过程中遇到的bug，
 
+[(转)一位大牛对于写技术博客的一些建议](https://www.cnblogs.com/princepeng/p/11174085.html)
+
+[技术博客文章的写作思路总结](https://my.oschina.net/FEEDFACF/blog/1610191)
 
 
 
-
-## <a id="preface"><font color="black">微前端是什么</font></a>
+## <a id="what"><font color="black">微前端是什么</font></a>
 
 微前端的产生是借鉴后端微服务的概念而来，将后端为服务的理念应用在浏览器端，即将Web应用由单一的单体应用转变为多个小型前端应用聚合为一的应用。
 
@@ -61,6 +63,7 @@
 
 ## <a id="title10"><font color="black">参考代码</font></a>
 
+- [乾坤](https://github.com/umijs/qiankun)
 - [微前端模块加载器](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FFantasy9527%2Flotus-scaffold-micro-frontend-portal)
 - [微前端Base App示例源码](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FFantasy9527%2Fmicrofrontend-base-demo)
 - [微前端子项目示例源码](https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2FFantasy9527%2Fmicrofrontend-submodule-demo)
