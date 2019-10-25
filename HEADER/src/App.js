@@ -4,6 +4,203 @@ import { useState, useEffect, useRef } from "react";
 import { Icon } from "antd";
 import "./App.less";
 
+// [
+//   { id: 30, pid: 1, city: "云南省" },
+//   { id: 326, pid: 26, city: "达州" }
+// ];
+const menuTree = [
+  {
+    id: 1,
+    path: null,
+    value: "工业平台",
+    children: [
+      {
+        id: 2,
+        _parentId: 1,
+        path: "http://11.11.14.1:32005/landing/login/",
+        value: "工业平台",
+        children: []
+      },
+      {
+        id: 3,
+        _parentId: 1,
+        path: "http://11.11.53.65:8888",
+        value: "工业互联网基础平台",
+        children: []
+      },
+      {
+        id: 4,
+        _parentId: 1,
+        path: "http://11.11.53.190:8080/#",
+        value: "大数据平台",
+        children: [
+          {
+            id: 5,
+            _parentId: 4,
+            path: "http://11.11.53.190:8080/#/main/dashboard/metrics",
+            value: "大数据管理",
+            children: []
+          },
+          {
+            id: 6,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 7,
+            _parentId: 4,
+            path: "http://11.11.53.190:6080/#/main/tenement/list",
+            value: "安全中心",
+            children: []
+          },
+          {
+            id: 8,
+            _parentId: 4,
+            path: "http://11.11.53.190:3007/#/main/hostManagement",
+            value: "数据集成",
+            children: []
+          },
+          {
+            id: 9,
+            _parentId: 4,
+            path: "http://11.11.53.65:8888",
+            value: "数据中心",
+            children: []
+          },
+          {
+            id: 10,
+            _parentId: 4,
+            path: "http://11.11.53.190:8585/#/home",
+            value: "多维建模",
+            children: []
+          },
+          {
+            id: 11,
+            _parentId: 4,
+            path: "http://11.11.53.190:9321/",
+            value: "任务调度",
+            children: []
+          },
+          {
+            id: 12,
+            _parentId: 4,
+            path: "http://11.11.53.80:8001/#/project",
+            value: "数据挖掘",
+            children: []
+          },
+          {
+            id: 13,
+            _parentId: 4,
+            path: "http://11.11.53.190:21001/#/main/home",
+            value: "数据治理",
+            children: []
+          },
+          {
+            id: 14,
+            _parentId: 4,
+            path: "http://11.11.53.78:8000/",
+            value: "敏捷BI",
+            children: []
+          },
+          {
+            id: 15,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 16,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 17,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 18,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 19,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 20,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 21,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 22,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 23,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 24,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 25,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 26,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          },
+          {
+            id: 27,
+            _parentId: 4,
+            path: "http://11.11.53.190:8779/",
+            value: "实时引擎",
+            children: []
+          }
+        ]
+      }
+    ]
+  }
+];
+
 function App() {
   // const [count, setCount] = useState(0);
   const ref = useRef();
@@ -70,7 +267,13 @@ function App() {
             </a>
           </li>
           <li>
-            <a href="http://11.11.53.190:8080/#">大数据平台</a>
+            <a
+              href="http://11.11.53.190:8080/#"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              大数据平台
+            </a>
           </li>
         </ul>
         <div className="common-nav-item">
