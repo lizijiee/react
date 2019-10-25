@@ -29,12 +29,14 @@ function App() {
           console.log(isHovered);
         }}
       >
-        <i className="menu" />
+        {/* <i className="menu" /> */}
         <img
           src={require("./assets/menu.png")}
           alt="menu-icon"
           className="menu-icon"
         />
+      </div>
+      <div className="common-all-menu">
         <ul className="common-navs-collected">
           {/* 
               只要是鼠标划过组件便渲染，只是渲染内容不同。
@@ -69,100 +71,103 @@ function App() {
           </li>
           <li>
             <a href="http://11.11.53.190:8080/#">大数据平台</a>
-            <ul style={{ width: "460px", right: "-460px", display: "none" }}>
-              <li>
-                <a
-                  href="http://11.11.53.190:8080/#/main/dasboard/metrics"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  大数据管理
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:8779/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  实时引擎
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:6080/#/main/tenement/list"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  安全中心
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:3007/#/main/hostManagement"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  数据集成
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.65:8888"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  数据中心
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:8585/#/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  多维建模
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:9321/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  任务调度
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.80:8001/#/project"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  数据挖掘
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.190:21001/#/main/home"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  数据治理
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://11.11.53.78:8000/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  敏捷BI
-                </a>
-              </li>
-            </ul>
           </li>
         </ul>
+        <div className="common-nav-item">
+          <h5>大数据平台</h5>
+          <ul className="common-menu-nav">
+            <li>
+              <a
+                href="http://11.11.53.190:8080/#/main/dasboard/metrics"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                大数据管理
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:8779/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                实时引擎
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:6080/#/main/tenement/list"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                安全中心
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:3007/#/main/hostManagement"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                数据集成
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.65:8888"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                数据中心
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:8585/#/home"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                多维建模
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:9321/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                任务调度
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.80:8001/#/project"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                数据挖掘
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.190:21001/#/main/home"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                数据治理
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://11.11.53.78:8000/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                敏捷BI
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
       <div className="common-topbar-right">
         <a

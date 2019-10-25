@@ -18,16 +18,6 @@
         // transition: width 2s;
         cursor: pointer;
 
-        &:hover {
-            background: yellow;
-            text-align: left;
-            // padding-left: 16px;
-        }
-
-        &:hover .common-navs-collected {
-            display: inline-block;
-        }
-
         img {
             width: 18px;
             margin: 0 auto;
@@ -36,29 +26,86 @@
             margin: 0 16px;
             height: 14px;
         }
+    }
+
+    .common-all-menu {
+        position: absolute;
+        left: calc(325px);
+        background: #f7f7f7;
+        width: 750px;
 
         .common-navs-collected {
             // position: absolute;
             // display: none;
+            height: 50px;
+            line-height: normal;
+            background: white;
 
             li {
+                color: rgba(0, 0, 0, 0.85);
+                font-size: 12px;
+                height: 50px;
+                line-height: 50px;
+                padding: 0 40px;
+                display: inline-block;
+                vertical-align: middle;
+                box-sizing: border-box;
+                -moz-box-sizing: border-box;
+                -webkit-box-sizing: border-box;
+
+                /* Safari */
                 &:hover {
-                    color: lime;
-                    background: red;
+                    // background-color: #ebebeb;
+                    color: #ff6a00;
+                    // font-weight: 600;
                     cursor: pointer;
+                    border-bottom: 2px solid #ff6a00;
                 }
 
-                display: inline-block;
-                font-size: 16px;
-                padding: 0 40px;
+
             }
         }
 
         .common-menu-nav {
-            background: yellow;
+            line-height: normal;
 
             li {
                 display: inline-block;
+                padding: 0 25px;
+                font-size: 12px;
+                height: 30px;
+                line-height: 30px;
+                cursor: pointer;
+                width: 170px;
+                text-align: center;
+
+                &:hover {
+                    color: red;
+                    background-color: #ebebeb;
+                }
+
+                a {
+                    color: #555555;
+                }
+            }
+        }
+
+        .common-nav-item {
+            font-size: 12px;
+            padding-bottom: 10px;
+
+            h5 {
+                color: #555555;
+                font-size: 12px;
+                font-weight: 600;
+                padding-left: 20px;
+                height: 35px;
+                line-height: 35px;
+                border-bottom: 1px solid #e5e5e5;
+            }
+
+            ul {
+                padding: 0;
             }
         }
     }
