@@ -8,7 +8,7 @@ import "./App.less";
 //   { id: 30, pid: 1, city: "云南省" },
 //   { id: 326, pid: 26, city: "达州" }
 // ];
-const menuTree = [
+/* const menuTree = [
   {
     id: 1,
     path: null,
@@ -199,7 +199,7 @@ const menuTree = [
       }
     ]
   }
-];
+]; */
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -277,7 +277,9 @@ function App() {
           </li>
         </ul>
         <div className="common-nav-item">
-          <h5>大数据平台</h5>
+          <div>
+            <h5>大数据平台</h5>
+          </div>
           <ul className="common-menu-nav">
             <li>
               <a
