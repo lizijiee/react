@@ -8,7 +8,7 @@ import "./App.less";
 //   { id: 30, pid: 1, city: "云南省" },
 //   { id: 326, pid: 26, city: "达州" }
 // ];
-/* const menuTree = [
+const menuTree = [
   {
     id: 1,
     path: null,
@@ -18,7 +18,7 @@ import "./App.less";
         id: 2,
         _parentId: 1,
         path: "http://11.11.14.1:32005/landing/login/",
-        value: "工业平台",
+        value: "PaaS平台",
         children: []
       },
       {
@@ -103,113 +103,162 @@ import "./App.less";
             path: "http://11.11.53.78:8000/",
             value: "敏捷BI",
             children: []
-          },
-          {
-            id: 15,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 16,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 17,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 18,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 19,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 20,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 21,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 22,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 23,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 24,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 25,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 26,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
-          },
-          {
-            id: 27,
-            _parentId: 4,
-            path: "http://11.11.53.190:8779/",
-            value: "实时引擎",
-            children: []
           }
         ]
       }
     ]
+  },
+  {
+    id: 18,
+    path: null,
+    value: "应用管理",
+    children: [
+      {
+        id: 19,
+        _parentId: 18,
+        path: "http://11.11.78.240:9091/#/user/login",
+        value: "门户后台控制台",
+        children: []
+      }
+    ]
+  },
+  {
+    id: 20,
+    path: null,
+    value: "开发者中心",
+    children: [
+      {
+        id: 21,
+        _parentId: 20,
+        path: "http://11.11.53.220",
+        value: "开发者门户",
+        children: []
+      },
+      {
+        id: 22,
+        _parentId: 20,
+        path: "http://11.11.174.166:8090/bbs/",
+        value: "开发者论坛",
+        children: []
+      },
+      {
+        id: 23,
+        _parentId: 20,
+        path: "http://11.11.174.165:19091/demo/",
+        value: "开发者文档中心",
+        children: []
+      }
+    ]
+  },
+  {
+    id: 25,
+    path: null,
+    value: "技术支撑工具",
+    children: [
+      {
+        id: 26,
+        _parentId: 25,
+        path: "http://11.11.174.165:8066",
+        value: "用户中心",
+        children: []
+      },
+      {
+        id: 27,
+        _parentId: 25,
+        path: "http://11.11.174.165:8070",
+        value: "分布式配置服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.165:1111",
+        value: "服务注册中心",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.165:5601",
+        value: "日志服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.78.158:8081",
+        value: "短信服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.165:8001/",
+        value: "微服务网关服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.165:18082",
+        value: "微服务管理控制台",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.166:8848/nacos/#/login",
+        value: "微服务注册服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.78.158:3000/",
+        value: "平台监控服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.78.159",
+        value: "负载均衡服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.78.160",
+        value: "数据集成服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.78.160:9003",
+        value: "分布式事务服务",
+        children: []
+      },
+      {
+        id: 28,
+        _parentId: 25,
+        path: "http://11.11.174.165:28080/#/main",
+        value: "分布式性能监控服务",
+        children: []
+      }
+    ]
   }
-]; */
+];
 
 function App() {
   // const [count, setCount] = useState(0);
   const ref = useRef();
   const [isHovered, setHovered] = useState(false);
   // console.log(ref.current, isHovered)
-  console.log(isHovered);
-  useEffect(() => {
-    console.log(isHovered);
-  });
+  // console.log(menuTree);
+  // useEffect(() => {
+  //   console.log(ref.current.offsetLeft);
+  // });
   return (
     <header className="common-basic-bar">
       <div className="common-topbar-logo">
@@ -238,141 +287,53 @@ function App() {
           {/* 
               只要是鼠标划过组件便渲染，只是渲染内容不同。
           */}
-          <li>管理菜单</li>
-          <li>工业应用</li>
+          {/* <li>管理菜单</li> */}
+          {/* <li>工业平台</li>
           <li>应用管理</li>
           <li>开发者中心</li>
-          <li>技术支撑工具</li>
+          <li>技术支撑工具</li> */}
+          {menuTree.map(i => (
+            <li key={i.id}>{i.value}</li>
+          ))}
         </ul>
-        <ul
-          className="common-menu-nav"
-          // style={{ display: isHovered ? "block" : "none" }}
-        >
-          <li>
-            <a
-              href="http://11.11.14.1:32005/landing/login/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              PaaS平台
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://11.11.53.65:8888"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              工业互联网基础平台
-            </a>
-          </li>
-          <li>
-            <a
-              href="http://11.11.53.190:8080/#"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              大数据平台
-            </a>
-          </li>
-        </ul>
-        <div className="common-nav-item">
-          <div>
-            <h5>大数据平台</h5>
-          </div>
-          <ul className="common-menu-nav">
-            <li>
-              <a
-                href="http://11.11.53.190:8080/#/main/dasboard/metrics"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                大数据管理
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:8779/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                实时引擎
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:6080/#/main/tenement/list"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                安全中心
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:3007/#/main/hostManagement"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                数据集成
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.65:8888"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                数据中心
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:8585/#/home"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                多维建模
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:9321/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                任务调度
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.80:8001/#/project"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                数据挖掘
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.190:21001/#/main/home"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                数据治理
-              </a>
-            </li>
-            <li>
-              <a
-                href="http://11.11.53.78:8000/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                敏捷BI
-              </a>
-            </li>
-          </ul>
-        </div>
+        {menuTree[0].children.map(a => {
+          if (a.children.length) {
+            return (
+              <div className="common-nav-item" key={a.id}>
+                <div>
+                  <h5> {a.value}</h5>
+                </div>
+                <ul className="common-menu-nav">
+                  {a.children.map(item => {
+                    return (
+                      <li key={item.id}>
+                        <a
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {item.value}
+                        </a>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            );
+          } else {
+            return (
+              <div className="common-nav-item common-nav-item-null" key={a.id}>
+                <div>
+                  <h5>
+                    <a href={a.path} target="_blank" rel="noopener noreferrer">
+                      {a.value}
+                    </a>
+                  </h5>
+                </div>
+              </div>
+            );
+          }
+        })}
       </div>
       <div className="common-topbar-right">
         <a
