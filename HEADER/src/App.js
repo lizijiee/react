@@ -1,13 +1,12 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 // import logo from './logo.svg';
+import GetQueryString from './GetQueryString';
 import { Icon } from "antd";
 import "./App.less";
 
-// [
-//   { id: 30, pid: 1, city: "云南省" },
-//   { id: 326, pid: 26, city: "达州" }
-// ];
+console.log(GetQueryString("topic"))
+
 const menuTree = [
   {
     id: 1,
@@ -177,70 +176,70 @@ const menuTree = [
         children: []
       },
       {
-        id: 28,
+        id: 29,
         _parentId: 25,
         path: "http://11.11.174.165:5601",
         value: "日志服务",
         children: []
       },
       {
-        id: 28,
+        id: 30,
         _parentId: 25,
         path: "http://11.11.78.158:8081",
         value: "短信服务",
         children: []
       },
       {
-        id: 28,
+        id: 31,
         _parentId: 25,
         path: "http://11.11.174.165:8001/",
         value: "微服务网关服务",
         children: []
       },
       {
-        id: 28,
+        id: 32,
         _parentId: 25,
         path: "http://11.11.174.165:18082",
         value: "微服务管理控制台",
         children: []
       },
       {
-        id: 28,
+        id: 33,
         _parentId: 25,
         path: "http://11.11.174.166:8848/nacos/#/login",
         value: "微服务注册服务",
         children: []
       },
       {
-        id: 28,
+        id: 34,
         _parentId: 25,
         path: "http://11.11.78.158:3000/",
         value: "平台监控服务",
         children: []
       },
       {
-        id: 28,
+        id: 35,
         _parentId: 25,
         path: "http://11.11.78.159",
         value: "负载均衡服务",
         children: []
       },
       {
-        id: 28,
+        id: 36,
         _parentId: 25,
         path: "http://11.11.78.160",
         value: "数据集成服务",
         children: []
       },
       {
-        id: 28,
+        id: 37,
         _parentId: 25,
         path: "http://11.11.78.160:9003",
         value: "分布式事务服务",
         children: []
       },
       {
-        id: 28,
+        id: 38,
         _parentId: 25,
         path: "http://11.11.174.165:28080/#/main",
         value: "分布式性能监控服务",
@@ -254,6 +253,11 @@ function App() {
   // const [count, setCount] = useState(0);
   const ref = useRef();
   const [isHovered, setHovered] = useState(false);
+
+  const [obj, setObject] = useState({
+    count: 0,
+    name: "alife"
+  });
   // console.log(ref.current, isHovered)
   // console.log(menuTree);
   // useEffect(() => {
@@ -270,10 +274,6 @@ function App() {
       <div
         ref={ref}
         className="common-all-nav"
-        onMouseLeave={() => {
-          setHovered(false);
-          console.log(isHovered);
-        }}
       >
         {/* <i className="menu" /> */}
         <img
@@ -284,56 +284,72 @@ function App() {
       </div>
       <div className="common-all-menu">
         <ul className="common-navs-collected">
-          {/* 
-              只要是鼠标划过组件便渲染，只是渲染内容不同。
-          */}
-          {/* <li>管理菜单</li> */}
-          {/* <li>工业平台</li>
-          <li>应用管理</li>
-          <li>开发者中心</li>
-          <li>技术支撑工具</li> */}
-          {menuTree.map(i => (
-            <li key={i.id}>{i.value}</li>
+          {menuTree.map((e, i) => (
+            <li 
+            key={e.id} 
+            onMouseLeave={() => {
+              setHovered(false);
+              setObject({ ...obj, count: i })
+            }}
+            onMouseEnter={() => {
+              setHovered(true);
+              setObject({ ...obj, count: i })
+            }}
+            >
+              {e.value}
+            </li>
           ))}
         </ul>
-        {menuTree[0].children.map(a => {
-          if (a.children.length) {
-            return (
-              <div className="common-nav-item" key={a.id}>
-                <div>
-                  <h5> {a.value}</h5>
+        <div
+          className="common-nav-wrap"
+          style={{ display: isHovered ? "block" : "none" }}
+        >
+          {menuTree[obj.count].children.map(a => {
+            if (a.children.length) {
+              return (
+                <div className="common-nav-item" key={a.id}>
+                  <div>
+                    <h5> {a.value}</h5>
+                  </div>
+                  <ul className="common-menu-nav">
+                    {a.children.map(item => {
+                      return (
+                        <li key={item.id}>
+                          <a
+                            href={item.path}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {item.value}
+                          </a>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
-                <ul className="common-menu-nav">
-                  {a.children.map(item => {
-                    return (
-                      <li key={item.id}>
-                        <a
-                          href={item.path}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          {item.value}
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </div>
-            );
-          } else {
-            return (
-              <div className="common-nav-item common-nav-item-null" key={a.id}>
-                <div>
-                  <h5>
-                    <a href={a.path} target="_blank" rel="noopener noreferrer">
-                      {a.value}
-                    </a>
-                  </h5>
+              );
+            } else {
+              return (
+                <div
+                  className="common-nav-item common-nav-item-null"
+                  key={a.id}
+                >
+                  <div>
+                    <h5>
+                      <a
+                        href={a.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {a.value}
+                      </a>
+                    </h5>
+                  </div>
                 </div>
-              </div>
-            );
-          }
-        })}
+              );
+            }
+          })}
+        </div>
       </div>
       <div className="common-topbar-right">
         <a
