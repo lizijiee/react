@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 // import logo from './logo.svg';
-import GetQueryString from './GetQueryString';
+import GetQueryString from "./GetQueryString";
 import { Icon } from "antd";
 import "./App.less";
 
-console.log(GetQueryString("topic"))
+console.log(GetQueryString("topic_id"));
 
 const menuTree = [
   {
@@ -271,85 +271,82 @@ function App() {
         </a>
         <span>中国石油工业互联网平台</span>
       </div>
-      <div
-        ref={ref}
-        className="common-all-nav"
-      >
-        {/* <i className="menu" /> */}
+      <div ref={ref} className="common-all-nav">
+        {/* <Icon type="menu" style={{ fontSize: "16px" }} /> */}
         <img
-          src={require("./assets/menu.png")}
+         src={require("./assets/menu.png")}
           alt="menu-icon"
           className="menu-icon"
         />
-      </div>
+      </div> 
       <div className="common-all-menu">
         <ul className="common-navs-collected">
           {menuTree.map((e, i) => (
-            <li 
-            key={e.id} 
-            onMouseLeave={() => {
-              setHovered(false);
-              setObject({ ...obj, count: i })
-            }}
-            onMouseEnter={() => {
-              setHovered(true);
-              setObject({ ...obj, count: i })
-            }}
+            <li
+              key={e.id}
+              // onMouseEnter={() => {
+              //   setHovered(true);
+              //   setObject({ ...obj, count: i });
+              // }}
             >
-              {e.value}
+              <span>{e.value}</span>
+              <div
+                className="common-nav-wrap"
+                // style={{ display: isHovered ? "block" : "none" }}
+                onMouseLeave={() => {
+                  setHovered(false);
+                  // setObject({ ...obj, count: i });
+                }}
+              >
+                {menuTree[i].children.map(a => {
+                  if (a.children.length) {
+                    return (
+                      <div className="common-nav-item" key={a.id}>
+                        <div>
+                          <h5> {a.value}</h5>
+                        </div>
+                        <ul className="common-menu-nav">
+                          {a.children.map(item => {
+                            return (
+                              <li key={item.id}>
+                                <a
+                                  href={item.path}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                >
+                                  {item.value}
+                                </a>
+                              </li>
+                            );
+                          })}
+                        </ul>
+                      </div>
+                    );
+                  } else {
+                    return (
+                      <div
+                        className="common-nav-item common-nav-item-null"
+                        key={a.id}
+                      >
+                        <div>
+                          <h5>
+                            <a
+                              href={a.path}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              {a.value}
+                            </a>
+                          </h5>
+                        </div>
+                      </div>
+                    );
+                  }
+                })}
+              </div>
             </li>
           ))}
         </ul>
-        <div
-          className="common-nav-wrap"
-          style={{ display: isHovered ? "block" : "none" }}
-        >
-          {menuTree[obj.count].children.map(a => {
-            if (a.children.length) {
-              return (
-                <div className="common-nav-item" key={a.id}>
-                  <div>
-                    <h5> {a.value}</h5>
-                  </div>
-                  <ul className="common-menu-nav">
-                    {a.children.map(item => {
-                      return (
-                        <li key={item.id}>
-                          <a
-                            href={item.path}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            {item.value}
-                          </a>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  className="common-nav-item common-nav-item-null"
-                  key={a.id}
-                >
-                  <div>
-                    <h5>
-                      <a
-                        href={a.path}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        {a.value}
-                      </a>
-                    </h5>
-                  </div>
-                </div>
-              );
-            }
-          })}
-        </div>
       </div>
       <div className="common-topbar-right">
         <a
@@ -484,7 +481,6 @@ function App() {
           </ul>
         </div>
       </div>
-      <div className="common-navs-menus">111111</div>
     </header>
   );
 }
