@@ -262,7 +262,17 @@ function App() {
   // console.log(menuTree);
   // useEffect(() => {
   //   console.log(ref.current.offsetLeft);
-  // });
+  // },[ref.current]);
+
+  // useEffect(() => {
+  //   timer = setInterval(() => {
+  //     setCount(prevCount => prevCount + 1);
+  //   }, 1000);
+  //   return () => {
+  //     document.title = "componentWillUnmount";
+  //     clearInterval(timer);
+  //   };
+  // }, []);
   return (
     <header className="common-basic-bar">
       <div className="common-topbar-logo">
@@ -274,11 +284,11 @@ function App() {
       <div ref={ref} className="common-all-nav">
         {/* <Icon type="menu" style={{ fontSize: "16px" }} /> */}
         <img
-         src={require("./assets/menu.png")}
+          src={require("./assets/menu.png")}
           alt="menu-icon"
           className="menu-icon"
         />
-      </div> 
+      </div>
       <div className="common-all-menu">
         <ul className="common-navs-collected">
           {menuTree.map((e, i) => (
@@ -357,7 +367,12 @@ function App() {
           {/* <Icon type="question-circle" /> */}
         </a>
         <div className="common-topbar-notice">
-          <Icon type="sound" />
+          {/* <Icon type="sound" /> */}
+          <img
+            src={require("./assets/notice.png")}
+            alt="sound-icon"
+            className="sound-icon"
+          />
           <div className="common-topbar-dot" />
           <div className="common-notice-content">
             <div className="common-notice-head">
