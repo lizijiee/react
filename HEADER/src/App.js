@@ -281,10 +281,19 @@ function App() {
         </a>
         <span>中国石油工业互联网平台</span>
       </div>
-      <div ref={ref} className="common-all-nav">
+      <div
+        ref={ref}
+        className="common-all-nav"
+        onMouseEnter={() => {
+          console.log(1111111);
+        }}
+        onMouseLeave={()=>{
+          console.log(222222)
+        }}
+      >
         {/* <Icon type="menu" style={{ fontSize: "16px" }} /> */}
         <img
-          src={require("./assets/menu.png")}
+          src={require("./assets/error.png")}
           alt="menu-icon"
           className="menu-icon"
         />
