@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect, useRef } from "react";
 // import logo from './logo.svg';
 // import GetQueryString from "./GetQueryString";
-import imageClose from "./assets/error.png";
-import imageMenu from "./assets/menu.png";
 
 import { Icon } from "antd";
 import "./App.less";
@@ -255,7 +253,7 @@ function App() {
   const ref = useRef();
   const [isHovered, setHovered] = useState({
     show: false,
-    imgUrl: imageMenu
+    // imgUrl: imageMenu
   });
 
   // const [obj, setObject] = useState({
