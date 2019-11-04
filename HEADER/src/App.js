@@ -1,11 +1,12 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 // import logo from './logo.svg';
-import GetQueryString from "./GetQueryString";
+// import GetQueryString from "./GetQueryString";
+import imageClose from "./assets/error.png";
+import imageMenu from "./assets/menu.png";
+
 import { Icon } from "antd";
 import "./App.less";
-
-console.log(GetQueryString("topic_id"));
 
 const menuTree = [
   {
@@ -252,12 +253,15 @@ const menuTree = [
 function App() {
   // const [count, setCount] = useState(0);
   const ref = useRef();
-  const [isHovered, setHovered] = useState(false);
-
-  const [obj, setObject] = useState({
-    count: 0,
-    name: "alife"
+  const [isHovered, setHovered] = useState({
+    show: false,
+    imgUrl: imageMenu
   });
+
+  // const [obj, setObject] = useState({
+  //   count: 0,
+  //   name: "alife"
+  // });
   // console.log(ref.current, isHovered)
   // console.log(menuTree);
   // useEffect(() => {
@@ -285,88 +289,86 @@ function App() {
         ref={ref}
         className="common-all-nav"
         onMouseEnter={() => {
-          console.log(1111111);
-        }}
-        onMouseLeave={()=>{
-          console.log(222222)
+          // console.log(setHovered({ show: true, imgUrl: imageClose }));
         }}
       >
-        {/* <Icon type="menu" style={{ fontSize: "16px" }} /> */}
-        <img
-          src={require("./assets/error.png")}
-          alt="menu-icon"
-          className="menu-icon"
-        />
-      </div>
-      <div className="common-all-menu">
-        <ul className="common-navs-collected">
-          {menuTree.map((e, i) => (
-            <li
-              key={e.id}
-              // onMouseEnter={() => {
-              //   setHovered(true);
-              //   setObject({ ...obj, count: i });
-              // }}
-            >
-              <span>{e.value}</span>
-              <div
-                className="common-nav-wrap"
-                // style={{ display: isHovered ? "block" : "none" }}
-                onMouseLeave={() => {
-                  setHovered(false);
-                  // setObject({ ...obj, count: i });
-                }}
+        <i className="menu-icon" />
+        <div className="common-all-menu">
+          <ul
+            className="common-navs-collected"
+            onMouseLeave={() => {
+              // console.log(setHovered({ show: false, imgUrl: imageMenu }));
+            }}
+          >
+            {menuTree.map((e, i) => (
+              <li
+                key={e.id}
+                // onMouseEnter={() => {
+                //   setHovered(true);
+                //   setObject({ ...obj, count: i });
+                // }}
               >
-                {menuTree[i].children.map(a => {
-                  if (a.children.length) {
-                    return (
-                      <div className="common-nav-item" key={a.id}>
-                        <div>
-                          <h5> {a.value}</h5>
+                <span>{e.value}</span>
+                <div
+                  className="common-nav-wrap"
+                  // style={{ display: isHovered ? "block" : "none" }}
+                  // onMouseLeave={() => {
+                  // setHovered(false);
+                  // setObject({ ...obj, count: i });
+                  // }}
+                >
+                  {menuTree[i].children.map(a => {
+                    if (a.children.length) {
+                      return (
+                        <div className="common-nav-item" key={a.id}>
+                          <div>
+                            <h5> {a.value}</h5>
+                          </div>
+                          <ul className="common-menu-nav">
+                            {a.children.map(item => {
+                              return (
+                                <li key={item.id}>
+                                  <a
+                                    href={item.path}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                  >
+                                    {item.value}
+                                  </a>
+                                </li>
+                              );
+                            })}
+                          </ul>
                         </div>
-                        <ul className="common-menu-nav">
-                          {a.children.map(item => {
-                            return (
-                              <li key={item.id}>
-                                <a
-                                  href={item.path}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  {item.value}
-                                </a>
-                              </li>
-                            );
-                          })}
-                        </ul>
-                      </div>
-                    );
-                  } else {
-                    return (
-                      <div
-                        className="common-nav-item common-nav-item-null"
-                        key={a.id}
-                      >
-                        <div>
-                          <h5>
-                            <a
-                              href={a.path}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              {a.value}
-                            </a>
-                          </h5>
+                      );
+                    } else {
+                      return (
+                        <div
+                          className="common-nav-item common-nav-item-null"
+                          key={a.id}
+                        >
+                          <div>
+                            <h5>
+                              <a
+                                href={a.path}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {a.value}
+                              </a>
+                            </h5>
+                          </div>
                         </div>
-                      </div>
-                    );
-                  }
-                })}
-              </div>
-            </li>
-          ))}
-        </ul>
+                      );
+                    }
+                  })}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
+
       <div className="common-topbar-right">
         <a
           href="http://11.11.78.160:9090/api/fs/download?group=group1&amp;path=M00/00/00/CwtOoF1eNDuABbW3ACgGbtxc0-M16.docx&amp;fileName=%E9%97%A8%E6%88%B7%E5%90%8E%E5%8F%B0%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C.docx"
