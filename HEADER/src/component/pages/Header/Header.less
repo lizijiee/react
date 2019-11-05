@@ -1,0 +1,426 @@
+.common-basic-bar {
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .08);
+    border-bottom: 1px solid #e9e9e9;
+    background: white;
+    line-height: 50px;
+    font-size: 0;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    position: relative;
+
+    .common-all-nav {
+        width: 50px;
+        height: 50px;
+        float: left;
+        margin: 0;
+        font-size: 14px;
+
+        // transition: width 2s;
+        >i {
+            display: inline-block;
+            background: url('./images/menu.png') no-repeat center / cover;
+            // background-size: ;    no-repeat fixed center center
+            width: 16px;
+            height: 14px;
+            margin: 0 auto;
+            vertical-align: middle;
+            line-height: 50px;
+            margin: 0 16px;
+            transition: .1s ease;
+        }
+
+        .common-all-menu {
+            position: absolute;
+            left: calc(325px);
+            background: #f7f7f7;
+            top: 0;
+            opacity: 0;
+            transition: .3s ease;
+
+            // display: none;
+            // width: 750px;
+
+            .common-navs-collected {
+                // position: absolute;
+                // display: none;
+                height: 50px;
+                line-height: normal;
+                background: white;
+                position: relative;
+                border-bottom: 1px solid #e9e9e9;
+
+                >li {
+                    color: rgba(0, 0, 0, 0.65);
+                    font-size: 12px;
+                    height: 50px;
+                    line-height: 50px;
+                    // padding: 0 40px;
+                    margin: 0 25px;
+                    padding: 0 15px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    -webkit-box-sizing: border-box;
+
+                    /* Safari */
+                    &:hover {
+                        // background-color: #ebebeb;
+                        color: #ff6a00;
+                        // font-weight: 600;
+                        border-bottom: 2px solid #ff6a00;
+                    }
+
+                    &:hover .common-nav-wrap {
+                        display: block;
+                    }
+
+
+                    .common-nav-wrap {
+                        top: 50px;
+                        left: 0;
+                        position: absolute;
+                        display: none;
+                        width: 750px;
+                        background-color: #f7f7f7;
+                        padding-bottom: 15px;
+
+                        .common-menu-nav {
+                            line-height: normal;
+                            padding: 5px 0 0 25px;
+
+                            li {
+                                display: inline-block;
+                                padding: 0 0 0 25px;
+                                font-size: 12px;
+                                height: 28px;
+                                line-height: 28px;
+                                cursor: pointer;
+                                width: 130px;
+                                text-align: center;
+
+                                &:hover a {
+                                    color: #ff6a00;
+                                }
+
+                                a {
+                                    color: #555555;
+                                }
+                            }
+                        }
+
+                        .common-nav-item-null {
+                            padding: 0 !important;
+                            color: #555555;
+
+                            a {
+                                color: #555555;
+
+                                &:hover {
+                                    color: #ff6a00;
+                                }
+                            }
+                        }
+
+                        .common-nav-item {
+                            font-size: 12px;
+                            // padding: 0 0 10px 0;
+                            line-height: normal;
+
+                            h5 {
+                                color: #555555;
+                                font-size: 12px;
+                                font-weight: 600;
+                                margin-left: 25px;
+                                display: inline-block;
+                                height: 35px;
+                                line-height: 35px;
+                                margin-bottom: 5px;
+                                border-bottom: 1px solid #e5e5e5;
+                            }
+                        }
+
+                    }
+                }
+
+            }
+
+
+
+        }
+    }
+
+    .common-all-nav:hover>i {
+        background: url('./images/error.png') no-repeat center / cover;
+    }
+
+    .common-all-nav:hover .common-all-menu {
+        opacity: 1;
+    }
+
+
+
+    .common-topbar-logo {
+        height: 50px;
+        padding: 0 25px 0 10px;
+        float: left;
+        background-color: rgb(213, 160, 53);
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+
+            img {
+                width: 32px;
+                height: 32px;
+                vertical-align: middle;
+            }
+        }
+
+        span {
+            vertical-align: middle;
+            margin-left: 10px;
+            font-weight: 700;
+            font-size: 18px;
+            color: rgba(0, 0, 0, .65);
+        }
+    }
+
+    .common-topbar-right {
+        float: right;
+        font-size: 16px;
+
+        >a {
+            padding: 0 10px;
+            display: block;
+            color: #555;
+            float: left;
+            font-size: 16px;
+
+            img {
+                vertical-align: middle;
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+        >a:hover {
+            background: rgba(0, 0, 0, .025);
+        }
+
+        .common-topbar-notice {
+            float: left;
+            color: #555;
+            padding: 0 10px;
+            cursor: pointer;
+            position: relative;
+
+            .sound-icon {
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+
+            .common-topbar-dot {
+                font-size: 12px;
+                color: #fff;
+                background: #ee4a45;
+                width: 4px;
+                height: 4px;
+                border-radius: 2px;
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                z-index: 9;
+                white-space: nowrap;
+            }
+
+            .common-notice-content {
+                visibility: hidden;
+                position: absolute;
+                left: -300px;
+                top: 40px;
+                text-align: left;
+
+                .common-notice-head {
+                    height: 50px;
+                    line-height: 50px;
+                    padding: 0 15px;
+                    position: relative;
+                    background-color: #f7f7f7;
+                    font-weight: 500;
+                    font-size: 14px;
+                    overflow: hidden;
+
+                    span {
+                        float: left;
+                        font-weight: 500;
+                    }
+
+                    a {
+                        float: right;
+                        color: #0065bb;
+                        font-size: 12px;
+                    }
+                }
+
+                .common-notice-body {
+                    .common-notice-list {
+                        background: #fff;
+
+                        li:hover {
+                            background-color: #f2f2f2;
+                        }
+
+                        li {
+                            border-bottom: 1px solid #e5e5e5;
+                            cursor: pointer;
+
+                            a {
+                                padding: 10px 15px;
+                                display: block;
+
+                                p:first-child {
+                                    color: #333;
+                                    font-weight: 500;
+                                    font-size: 12px;
+                                    margin: 0;
+                                    max-width: 300px;
+                                    min-width: 200px;
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    line-height: 18px;
+                                    height: 18px;
+                                    cursor: pointer;
+                                }
+
+                                p:nth-child(2) {
+                                    font-size: 12px;
+                                    color: #555;
+                                    line-height: 18px;
+                                    height: 18px;
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .common-notice-foot {
+                    text-align: center;
+
+                    .common-notice-more:hover {
+                        background: #ea9d13;
+                    }
+
+                    .common-notice-more {
+                        height: 40px;
+                        line-height: 40px;
+                        padding-left: 15px;
+                        display: block;
+                        color: #333;
+                        background: #fff;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        .common-topbar-notice:hover {
+            background: rgba(0, 0, 0, .025);
+        }
+
+        .common-topbar-notice:hover .common-notice-content {
+            visibility: visible;
+        }
+
+        .common-topbar-official {
+            float: left;
+            padding: 0 10px;
+            cursor: pointer;
+
+            // a {
+            //     color: #555;
+            // }
+            img {
+                width: 20px;
+                height: 20px;
+                vertical-align: middle;
+            }
+        }
+
+        .common-topbar-official:hover {
+            background: rgba(0, 0, 0, .025);
+        }
+
+        .common-topbar-user:hover .common-user-list {
+            visibility: visible;
+        }
+
+        .common-topbar-user {
+            float: left;
+            font-size: 0;
+            padding: 0 10px;
+            cursor: pointer;
+            position: relative;
+
+            img {
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                vertical-align: middle;
+            }
+
+            .common-user-list {
+                visibility: hidden;
+                position: absolute;
+                top: 65px;
+                left: -120px;
+                margin: 0;
+                color: rgba(0, 0, 0, .65);
+                font-weight: 400;
+                font-size: 14px;
+                background-color: #fff;
+                padding: 4px 0;
+                -webkit-transition: all .3s;
+                transition: all .3s;
+                border-radius: 4px;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
+
+                .nav-trangle {
+                    width: 0;
+                    height: 0;
+                    border: 10px solid transparent;
+                    border-bottom-color: #fff;
+                    position: absolute;
+                    top: -20px;
+                    right: 8px;
+                }
+
+                >li:hover {
+                    background-color: #e6f7ff;
+                }
+
+                li {
+                    clear: both;
+                    margin: 0;
+                    padding: 7px 12px;
+                    color: rgba(0, 0, 0, .65);
+                    font-weight: 400;
+                    font-size: 14px;
+                    white-space: nowrap;
+                    cursor: pointer;
+                    min-width: 160px;
+                    text-align: left;
+                    line-height: 22px;
+
+                    >span {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
