@@ -1,0 +1,107 @@
+#components-form-demo-normal-login .login-form {
+    max-width: 300px;
+}
+
+#components-form-demo-normal-login .login-form-forgot {
+    float: right;
+}
+
+#components-form-demo-normal-login .login-form-button {
+    width: 100%;
+}
+
+.login-wrap {
+    text-align: center;
+    margin-top: 70px;
+
+    .login-top {
+        margin-bottom: 40px;
+
+        >img {
+            width: 44px;
+            height: 44px;
+            margin-right: 16px;
+        }
+
+        >span {
+            color: rgba(0, 0, 0, .85);
+            font-weight: 600;
+            font-size: 33px;
+        }
+    }
+
+    .login-main {
+        width: 388px;
+        margin: 0 auto;
+
+        .login-tabs-wrap {
+            color: #40a9ff;
+            margin-bottom: 24px;
+
+            .tab-selected {
+                em {
+                    color: #1890ff;
+                    border-bottom: 2px solid #1890ff;
+                }
+
+                // border-bottom: 2px solid #1890ff;
+            }
+
+            span {
+                display: inline-block;
+
+                em {
+                    display: block;
+                    box-sizing: border-box;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    cursor: pointer;
+                    // transition: color .3s cubic-bezier(.645, .045, .355, 1);
+                    font-size: 14px;
+                    line-height: 1.5;
+                    font-style: normal;
+                    color: #1e1e1e;
+                }
+            }
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+            text-align: left;
+
+            .ant-form-item-children {
+                display: block;
+                overflow: hidden;
+
+                .ant-input-affix-wrapper {
+                    vertical-align: middle;
+                    float: left;
+                }
+
+                >button {
+                    vertical-align: middle;
+                    float: right;
+                }
+            }
+
+            .ant-form-item-children::before,
+            .ant-form-item-children::after {
+                content: "";
+                height: 0;
+                line-height: 0;
+                display: block;
+                visibility: none;
+                clear: both;
+            }
+        }
+
+        .login-form-forgot {
+            float: right;
+        }
+
+        .login-form-button {
+            width: 100%;
+        }
+    }
+}
